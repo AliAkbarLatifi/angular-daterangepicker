@@ -28,6 +28,9 @@ picker.directive 'dateRangePicker', ($compile, $timeout, $parse, dateRangePicker
 
     el = $(element)
     customOpts = $scope.opts
+    # local format for jalaali
+    customOpts.locale.format = 'jYYYY-jMM-jDD' if customOpts.jalaali and not customOpts.locale.format
+
     opts = _mergeOpts({}, dateRangePickerConfig, customOpts)
     _picker = null
 

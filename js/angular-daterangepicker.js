@@ -37,6 +37,9 @@
         };
         el = $(element);
         customOpts = $scope.opts;
+        if (customOpts.jalaali && !customOpts.locale.format) {
+          customOpts.locale.format = 'jYYYY-jMM-jDD';
+        }
         opts = _mergeOpts({}, dateRangePickerConfig, customOpts);
         _picker = null;
         _clear = function() {
